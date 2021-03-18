@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* outline: 1px dotted magenta; */
+}
+body {
+    background-color: rgb(255, 210, 87);
+    background-image: url('img/ninjagold-pattern.svg');
+    background-size: 450px;
+    font-family: sans-serif;
+}
+.wrapper {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 50px;
+}
+    img {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+    h4 {
+        font-size: 1.25em;
+        color: rgb(131, 73, 20);
+        margin-bottom: 20px;
+    }
+    h1 {
+        padding: 20px 0;
+    }
+    span {
+        color: rgb(131, 73, 20);
+        border: 2px solid black;
+        padding: 3px;
+        width: 150px;
+        display: inline-block;
+        border-radius: 10px;
+    }
+    .locations {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+        .card {
+            background-color: rgb(255, 225, 142);
+            width: 400px;
+            padding: 20px 0;
+            margin: 5px;
+            border-radius: 10px;
+            border-bottom: 5px solid rgb(255, 157, 67);
+        }
+            .card h2, .card p {
+                margin-bottom: 15px;
+            }
+            .card h2 {
+                color: rgb(131, 73, 20);
+            }
+            .card p {
+                font-style: italic;
+            }
+            .card a.button {
+                margin-top: 0;
+            }
+            .card .button, a.button {
+                background-color: rgb(255, 157, 67);
+                padding: 10px 20px;
+                border: none;
+                border-radius: 30px;
+                cursor: pointer;
+                font-weight: bold;
+                border-bottom: 3px solid rgb(131, 73, 20);
+                color: rgb(131, 73, 20);
+            }
+                .card .button:hover {
+                    background-color: rgb(255, 174, 97)
+                }
+    .head {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    h3 {
+        font-size: 1.25em;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .activity-box {
+        border: 2px solid rgb(131, 73, 20);
+        border-radius: 10px;
+        background-color: rgb(255, 225, 142);
+        height: 300px;
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: left;
+        overflow: auto;
+    }
+        .activity-box p {
+            margin-bottom: 10px;
+            color: green;
+        }
+        p.lost {
+            color: red;
+        }
+    a {
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 25px;
+    }
+
+    /*------------------ Smaller Screens -------------------*/
+    @media only screen and (min-width: 1130px) {
+        .wrapper {
+    width: 1080px;
+    margin: 0 auto;
+}
+    img {
+        width: 50%;
+    }
+    h4 {
+        font-size: 1.5em;
+    }
+    .locations {
+        justify-content: space-between;
+    }
+        .card {
+            width: 250px;
+        }
+    }

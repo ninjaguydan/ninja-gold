@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'main.js' %}" defer></script>
+</head>
+<body>
+    <!-- Variable for JS -->
+    <gold gold="{{request.session.gold}}" count="{{request.session.count}}"></gold>
+    <div class="wrapper">
+        <img src="{% static 'img/ng-logo.png' %}" alt="ninja gold logo">
+        <h4>Can you get 100 gold in 10 turns <br> without going over?</h4>
+        <h1>Your Gold: <span>{{request.session.gold}}</span></h1>
+        <div class="locations">
+            <div class="card">
+                <h2>Farm</h2>
+                <p>Earns 10-20 gold</p>
+                <a href="/gold/farm" class="button" id="location">Find Gold!</a>
+            </div>
+            <div class="card">
+                <h2>Cave</h2>
+                <p>Earns 5-10 gold</p>
+                <a href="/gold/cave" class="button" id="location">Find Gold!</a>
+            </div>
+            <div class="card">
+                <h2>House</h2>
+                <p>Earns 1-5 gold</p>
+                <a href="/gold/house" class="button" id="location">Find Gold!</a>
+            </div>
+            <div class="card">
+                <h2>Casino</h2>
+                <p>Earns/ Takes 0-50 gold</p>
+                <a href="/gold/casino" class="button" id="location">Find Gold!</a>
+            </div>
+        </div>
+        <div class="head">
+            <h3>Activities</h3>
+            <h3>Turns: {{request.session.count}}</h3>
+        </div>
+        <div class="activity-box">
+            {% for activity in request.session.activities %}
+            <p class="{{ activity.result }}">{{ activity.message }}</p>
+            {% endfor %}
+        </div>
+        <a href="/reset" class="button">Reset Game</a>
+    </div>
+</body>
+</html>
